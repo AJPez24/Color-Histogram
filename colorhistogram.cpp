@@ -22,6 +22,7 @@ ColorHistogram::ColorHistogram(const QImage &_image):image(_image), colorFrequen
 
     histogramLabel = new QLabel();
     histogramLabel->setPixmap(defaultPixmap);
+
     toolBar->addWidget(histogramLabel,  0, Qt::AlignCenter);
 
     slider = new QSlider(Qt::Horizontal);
@@ -47,6 +48,7 @@ ColorHistogram::ColorHistogram(const QImage &_image):image(_image), colorFrequen
     scaleSelect->addItem("64");
     scaleSelect->addItem("128");
     scaleSelect->addItem("256");
+    scaleSelect->setCurrentIndex(8);
     connect(scaleSelect, &QComboBox::currentTextChanged, this, &ColorHistogram::comboBoxChanged);
     toolBar->addWidget(scaleSelect,  0, Qt::AlignCenter);
 
